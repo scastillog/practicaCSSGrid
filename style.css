@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', system-ui;
+}
+
+figure {
+  margin: 0;
+}
+
+.home {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 70px 1fr;
+  grid-template-rows: 70px 1fr;
+  grid-template-areas:  "header header"
+                        "slide-bar movies";
+}
+
+.header{
+  grid-area: header;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .1);
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.user-container{
+  position: relative;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.user-name {
+  cursor: pointer;
+}
+
+.user-window {
+  display: none;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
+  position: absolute;
+  top: 50px;
+  background: white;
+  z-index: 1;
+}
+
+.user-window.active{
+  display: block;
+}
+
+.user-container span {
+  margin-right: 20px;
+  color: gray;
+}
+
+.user-container img{
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.search input {
+  width: 90%;
+  height: 25px;
+  border-radius: 10px;
+  font-size: .8em;
+  box-sizing: content-box;
+}
+
+.logo-container {
+  justify-self: center;
+}
+
+.slide-bar{
+  grid-area: slide-bar;
+  background: linear-gradient(to right,rgb(255, 92, 95), rgb(243, 117, 118) ) ;
+  color: white;
+  padding: 20px 5px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px 100px 100px auto;
+  justify-items: center;
+}
+
+.link {
+  text-align: center;
+  cursor: pointer;
+}
+
+.link span {
+  font-size: .8em;
+}
+
+.link.tool {
+  align-self: end;
+  padding-bottom: 20px
+}
+
+.link-bar {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+}
+
+.link-bar.home {
+  background-image: url('src/home.png');
+  background-size: 35px 35px;
+}
+.link-bar.trending {
+  background-image: url('src/trending.png');
+  background-size: 35px 35px;
+}
+.link-bar.like {
+  background-image: url('src/corazon.png');
+  background-size: 35px 35px;
+}
+.link-bar.tool {
+  background-image: url('src/ajustes.png');
+  background-size: 35px 35px;
+}
+
+.movies{
+  grid-area: movies;
+  overflow: auto;
+  padding: 10px ;
+}
+
+.item-list {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.item-movie {
+  height: 200px;
+  width: 310px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  position: relative;
+  margin-right: 40px;
+}
+
+.item-movie-img img {
+  height: 200px;
+  width: 310px;
+  object-fit: cover;
+}
+
+.item-movie-letter {
+  position: absolute;
+  background: rgba(255, 92, 95, .6);
+  height: 50%;
+  width: 100%;
+  box-sizing: border-box;
+  bottom: 0;
+  padding: 10px 5px 5px 5px;
+}
+
+.item-movie-title {
+  font-size: 1.3em;
+}
+
+.item-movie-description {
+  margin: 10px 0 0 0;
+  font-size: .8em;
+}
